@@ -6,9 +6,9 @@ spring:
   application:
     name: Boutique
   datasource:
-    username: maz
-    password: sa123
-    url: jdbc:mysql://localhost:3306/maz
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
 
 
   jpa:
@@ -18,4 +18,4 @@ spring:
     show-sql: true
 
   profiles:
-    active: ${Boutique:dev}
+    active: ${SPRING_PROFILES_ACTIVE :dev}
