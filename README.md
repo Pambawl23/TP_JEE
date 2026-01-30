@@ -39,7 +39,7 @@ com.polytech.commandes
 
 1. **Cloner le dépôt**
    ```bash
-   git clone <url-du-depot>
+   git clone https://github.com/Pambawl23/TP_JEE.git
    cd commandes-app
    ```
 
