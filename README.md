@@ -46,7 +46,7 @@ com.polytech.commandes
 2. **Configurer les variables d'environnement**
    ```bash
    export SPRING_PROFILES_ACTIVE=dev
-   export DB_URL=jdbc:mysql://localhost:5432/commandes_db
+   export DB_URL=jdbc:mysql://localhost:8080/commandes_db
    export DB_USERNAME=username
    export DB_PASSWORD=password
    export SERVER_PORT=8080
