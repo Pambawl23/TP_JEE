@@ -46,7 +46,7 @@ com.polytech.commandes
 2. **Configurer les variables d'environnement**
    ```bash
    export SPRING_PROFILES_ACTIVE=dev
-   export DB_URL=jdbc:postgresql://localhost:5432/commandes_db
+   export DB_URL=jdbc:mysql://localhost:5432/commandes_db
    export DB_USERNAME=username
    export DB_PASSWORD=password
    export SERVER_PORT=8080
@@ -233,19 +233,7 @@ Le projet suit l'architecture imposée avec une séparation stricte des responsa
 - **Entities** : Modèles de données JPA
 - **Config** : Configuration Spring (OpenAPI, sécurité, etc.)
 
-## 🐛 Dépannage
 
-### Problème de connexion à la base de données
-- Vérifier les variables d'environnement `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`
-- S'assurer que la base de données est accessible
-
-### Swagger non accessible
-- Vérifier que l'application est démarrée sur le bon port (variable `SERVER_PORT`)
-- Consulter les logs pour détecter d'éventuelles erreurs
-
-### Profil non activé
-- Vérifier la variable `SPRING_PROFILES_ACTIVE`
-- Consulter les logs de démarrage pour voir le profil actif
 
 ## 📄 Licence
 
