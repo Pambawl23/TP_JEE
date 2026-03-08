@@ -106,6 +106,58 @@ La page Swagger affiche :
 - Les modèles de requêtes/réponses
 - La possibilité de tester les endpoints directement depuis l'interface
 
+## 🔐 Authentification par token (JWT)
+
+L'API est sécurisée par JWT. Avant d'appeler les endpoints protégés (`/api/**`), il faut d'abord obtenir un token.
+
+### 1. Obtenir un token
+
+Endpoint public :
+- `POST /securite/token`
+
+Corps de la requête :
+
+```json
+{
+  "email": "dupont@email.com",
+  "nom": "Dupont"
+}
+```
+
+Réponse :
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9..."
+}
+```
+
+### 2. Utiliser le token dans les appels API
+
+Ajouter l'en-tête HTTP suivant :
+
+```http
+Authorization: Bearer <votre_token>
+```
+
+Exemple :
+
+```bash
+curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9..." http://localhost:8080/api/c1/clients
+```
+
+### 3. Via Swagger UI
+
+1. Exécuter `POST /securite/token` pour récupérer le token.
+2. Cliquer sur le bouton **Authorize** dans Swagger.
+3. Coller le token dans le format `Bearer <token>`.
+4. Tester les endpoints sécurisés.
+
+### 4. Durée de validité du token
+
+La durée d'expiration est configurable via :
+- `security.jwt.expiration` (en secondes, valeur par défaut : `3600`).
+
 ## 📞 Exemples d'appels API
 
 ### Produits
