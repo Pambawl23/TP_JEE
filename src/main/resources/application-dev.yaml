@@ -1,0 +1,18 @@
+Boutique:
+  admin:
+    name: Equipe Dev
+    email: dev@ugb.edu.sn
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  datasource:
+    url:  jdbc:mysql://localhost:3306/maz_BD
+    username: maz
+    password: sa123
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
